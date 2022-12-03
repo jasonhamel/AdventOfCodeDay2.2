@@ -43,16 +43,38 @@ public class Main {
             }
 
             if (line.charAt(2) == 'X') {
-                myChoice = "Rock";
-                myPoints = 1;
+                if (opponentChoice.equals("Rock")) {
+                    myChoice = "Scissors";
+                    myPoints = 3;
+                } else if (opponentChoice.equals("Paper")) {
+                    myChoice = "Rock";
+                    myPoints = 1;
+                } else if (opponentChoice.equals("Scissors")) {
+                    myChoice = "Paper";
+                    myPoints = 2;
+                }
             }
             if (line.charAt(2) == 'Y') {
-                myChoice = "Paper";
-                myPoints = 2;
+                myChoice = opponentChoice;
+                if (myChoice.equals("Rock")) {
+                    myPoints = 1;
+                } else if (myChoice.equals("Paper")) {
+                    myPoints = 2;
+                } else if (myChoice.equals("Scissors")) {
+                    myPoints = 3;
+                }
             }
             if (line.charAt(2) == 'Z') {
-                myChoice = "Scissors";
-                myPoints = 3;
+                if (opponentChoice.equals("Rock")) {
+                    myChoice = "Paper";
+                    myPoints = 2;
+                } else if (opponentChoice.equals("Paper")) {
+                    myChoice = "Scissors";
+                    myPoints = 3;
+                } else if (opponentChoice.equals("Scissors")) {
+                    myChoice = "Rock";
+                    myPoints = 1;
+                }
             }
 
             if (opponentChoice.equalsIgnoreCase(myChoice)) {
